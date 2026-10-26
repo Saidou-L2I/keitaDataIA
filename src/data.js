@@ -47,8 +47,35 @@ export const projects = [
   }
 
 ]
-export const journey = [
- {date:'Aujourd’hui',title:'Projets Data & Développement',place:'Projets personnels',description:'Tableaux de bord, analyses de données et applications web.'},
- {date:'Formation',title:'Master Data Science & Intelligence Artificielle',place:'Université Assane Seck de Ziguinchor',description:'Adapter les dates et le statut exacts de la formation.'},
- {date:'Expérience',title:'Formateur en informatique',place:'Groupe Hestima Dakar',description:'Formation et accompagnement sur les outils informatiques.'}
+export const journey = 
+[
+  {
+    date: 'Aujourd’hui',
+    title: 'Projets Data & Développement',
+    place: 'Projets personnels',
+    description:
+      'Réalisation de tableaux de bord interactifs, analyses de données et applications web.'
+  },
+  {
+    date: 'En cours',
+    title: 'Master Data Science & Intelligence Artificielle',
+    place: 'Groupe ISI Dakar',
+    description:
+      'Formation spécialisée en science des données, intelligence artificielle et Machine Learning.',
+    website: 'https://www.groupeisi.com/'
+  },
+  {
+    date: 'Licence',
+    title: 'Licence en Ingénierie Informatique',
+    place: 'Université Assane Seck de Ziguinchor',
+    description:
+      'Formation en informatique, développement logiciel et systèmes informatiques.'
+  },
+  {
+    date: 'Expérience',
+    title: 'Formateur en informatique',
+    place: 'Groupe HESTIMА Dakar',
+    description:
+      'Formation et accompagnement des apprenants dans l’utilisation des outils informatiques.'
+  }
 ]
