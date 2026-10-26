@@ -1,7 +1,26 @@
 import {useState} from 'react'
 import {motion,useReducedMotion} from 'framer-motion'
-import {ArrowDown,ArrowDownRight,ArrowRight,ArrowUpRight,Check,Code2,Download, Github, GraduationCap, Linkedin, Mail, Menu, MonitorSmartphone, MousePointer2, Sparkles, X, Zap} from 'lucide-react'
-import { Sun, Moon } from 'lucide-react'
+import {
+    ArrowDown,
+    ArrowDownRight,
+    ArrowRight,
+    ArrowUpRight,
+    Check,
+    Code2,
+    Download, 
+    Github, 
+    GraduationCap, 
+    Linkedin, 
+    Mail, Menu, 
+    MonitorSmartphone, 
+    MousePointer2, Sparkles,
+    X, Zap,
+    Sun, Moon ,BrainCircuit,
+    ChartNoAxesCombined,
+    Database,
+    ClipboardList
+    } from 'lucide-react'
+
 import SectionHeading from './components/SectionHeading.jsx'
 import {journey,profile,projects,skills} from './data.js'
 
@@ -80,21 +99,285 @@ function Nav({ lightMode, setLightMode }) {
   )
 }
 
-function Hero(){
- return <section className="hero container" id="home"><div className="hero-grid"><div className="hero-copy">
- <motion.div className="availability" initial={{opacity:0,x:-12}} animate={{opacity:1,x:0}}><span className="status-dot"/> DISPONIBLE POUR DES OPPORTUNITÉS</motion.div>
- <motion.p className="hero-kicker" initial={{opacity:0}} animate={{opacity:1}} transition={{delay:.2}}>Bonjour, je suis {profile.firstName}</motion.p>
- <motion.h1 initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:.7,delay:.25}}>Je transforme les idées en <span className="gradient-text">expériences digitales.</span></motion.h1>
- <motion.p className="hero-intro" initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{delay:.4}}>{profile.intro}</motion.p>
- <div className="hero-actions"><a className="button button-primary" href="#projects">Explorer mes projets <ArrowRight size={17}/></a><a className="button button-ghost" href={profile.cvPath} download><Download size={17}/> Télécharger mon CV</a></div>
- <div className="hero-socials"><span className="social-caption">RETROUVEZ-MOI</span><a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18}/></a><a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18}/></a><a href={`mailto:${profile.email}`} aria-label="E-mail"><Mail size={18}/></a></div>
- </div><motion.div className="hero-visual" initial={{opacity:0,scale:.92}} animate={{opacity:1,scale:1}} transition={{duration:.8,delay:.2}}><div className="orb orb-one"/><div className="orb orb-two"/><motion.div className="visual-card" animate={{y:[0,-8,0]}} transition={{duration:5,repeat:Infinity,ease:'easeInOut'}}><div className="code-top"><span/><span/><span/><small>creative.dev</small></div><div className="code-content"><p><em>01</em> <b>const</b> <strong>developer</strong> = {'{'}</p><p className="indent"><i>name</i>: <u>'Mamadou Keita'</u>,</p><p className="indent"><i>focus</i>: [</p><p className="indent2"><u>'Frontend'</u>,</p><p className="indent2"><u>'Data & IA'</u></p><p className="indent">],</p><p className="indent"><i>mindset</i>: <u>'Always learning'</u></p><p>{'}'}<span className="cursor">▋</span></p></div></motion.div><motion.div className="floating-chip chip-top" animate={{y:[0,7,0]}} transition={{duration:4,repeat:Infinity}}><Code2 size={16}/> Clean code</motion.div><motion.div className="floating-chip chip-bottom" animate={{y:[0,-7,0]}} transition={{duration:4.5,repeat:Infinity}}><Sparkles size={16}/> Creative mind</motion.div><div className="visual-caption">— BUILD · LEARN · CREATE</div></motion.div></div><a href="#about" className="scroll-hint"><ArrowDown size={15}/> DÉFILER POUR EXPLORER</a></section>
+
+function Hero() {
+  return (
+    <section className="hero container" id="home">
+      <div className="hero-grid">
+        <div className="hero-copy">
+          <motion.div
+            className="availability"
+            initial={{ opacity: 0, x: -12 }}
+            animate={{ opacity: 1, x: 0 }}
+          >
+            <span className="status-dot" />
+            DISPONIBLE POUR DES OPPORTUNITÉS
+          </motion.div>
+
+          <motion.p
+            className="hero-kicker"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            Bonjour, je suis {profile.firstName}
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+          >
+            Je transforme les idées en{" "}
+            <span className="gradient-text">
+              expériences digitales.
+            </span>
+          </motion.h1>
+
+          <motion.p
+            className="hero-intro"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            {profile.intro}
+          </motion.p>
+
+          <div className="hero-actions">
+            <a className="button button-primary" href="#projects">
+              Explorer mes projets <ArrowRight size={17} />
+            </a>
+
+            <a className="button button-ghost" href={profile.cvPath} download>
+              <Download size={17} /> Télécharger mon CV
+            </a>
+          </div>
+
+          <div className="hero-socials">
+            <span className="social-caption">RETROUVEZ-MOI</span>
+            <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+              <Github size={18} />
+            </a>
+            <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <Linkedin size={18} />
+            </a>
+            <a href={`mailto:${profile.email}`} aria-label="E-mail">
+              <Mail size={18} />
+            </a>
+          </div>
+        </div>
+
+        {/* Photo de profil */}
+        <motion.div
+          className="hero-visual hero-photo-visual"
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div className="photo-frame">
+            <img
+              src={`${import.meta.env.BASE_URL}images/ma-photo.jpeg`}
+              alt={`Portrait de ${profile.firstName}`}
+              className="hero-profile-photo"
+            />
+          </div>
+
+          <motion.div
+            className="floating-chip chip-top"
+            animate={{ y: [0, 7, 0] }}
+            transition={{ duration: 4, repeat: Infinity }}
+          >
+            <Code2 size={16} /> Développeur
+          </motion.div>
+
+          <motion.div
+            className="floating-chip chip-bottom"
+            animate={{ y: [0, -7, 0] }}
+            transition={{ duration: 4.5, repeat: Infinity }}
+          >
+            <Sparkles size={16} /> Data & IA
+          </motion.div>
+
+          <div className="visual-caption">— BUILD · LEARN · CREATE</div>
+        </motion.div>
+      </div>
+
+      <a href="#about" className="scroll-hint">
+        <ArrowDown size={15} /> DÉFILER POUR EXPLORER
+      </a>
+    </section>
+  );
 }
-function About(){
- const items=[{icon:Code2,title:'Développement',desc:'Des interfaces rapides, accessibles et pensées pour les utilisateurs.'},{icon:MonitorSmartphone,title:'Expérience UI',desc:'Un design responsive et des interactions soignées.'},{icon:Zap,title:'Data & impact',desc:'Des données structurées pour éclairer les décisions.'},{icon:MousePointer2,title:'Apprentissage',desc:'Expérimenter, itérer et progresser à chaque projet.'}]
- return <section className="section container" id="about"><Reveal><SectionHeading eyebrow="01 / À PROPOS" title={<>Curieux par nature.<br/><span className="muted-title">Créateur par passion.</span></>} description="À la croisée du développement web, de la donnée et de la résolution de problèmes."/></Reveal><div className="about-grid"><Reveal className="about-text"><p>J’aime concevoir des outils numériques utiles, rendre l’information plus lisible et apprendre en construisant des projets concrets.</p><p>Mon approche associe rigueur technique, sens du détail et envie de comprendre les besoins avant de choisir la solution.</p><div className="about-location"><span className="location-pulse"/> {profile.location}</div></Reveal><div className="value-grid">{items.map((v,i)=>{const Icon=v.icon;return <Reveal key={v.title}><motion.article className="value-card" whileHover={{y:-5,borderColor:'rgba(153,117,255,.42)'}}><span className="value-icon"><Icon size={19}/></span><h3>{v.title}</h3><p>{v.desc}</p></motion.article></Reveal>})}</div></div></section>
+
+
+function About() {
+  const items = [
+    {
+      icon: BrainCircuit,
+      title: 'Intelligence Artificielle',
+      desc: 'Développer des modèles de Machine Learning pour prédire, classifier et résoudre des problèmes concrets.'
+    },
+    {
+      icon: ChartNoAxesCombined,
+      title: 'Data Analysis & BI',
+      desc: 'Explorer, analyser et visualiser les données avec Python, SQL et Power BI pour faciliter la prise de décision.'
+    },
+    {
+      icon: Database,
+      title: 'Data Engineering',
+      desc: 'Collecter, nettoyer et transformer les données grâce aux pipelines ETL et aux technologies Big Data.'
+    },
+    {
+      icon: Code2,
+      title: 'Développement Web Full Stack',
+      desc: 'Concevoir des applications web modernes et intégrer des solutions intelligentes adaptées aux besoins des utilisateurs.'
+    }
+  ];
+
+  return (
+    <section className="section container" id="about">
+      <Reveal>
+        <SectionHeading
+          eyebrow="01 / À PROPOS"
+          title={
+            <>
+              La donnée au service de{" "}
+              <span className="gradient-text">l’intelligence.</span>
+              <br />
+              <span className="muted-title">La technologie au service de l’impact.</span>
+            </>
+          }
+          description="Passionné par l’intelligence artificielle, la science des données et l’analyse, je transforme les données en connaissances et en solutions concrètes."
+        />
+      </Reveal>
+
+      <div className="about-grid">
+        <Reveal className="about-text">
+          <p>
+            Je m’intéresse à la manière dont la Data Science et
+            l’intelligence artificielle permettent d’extraire des
+            informations pertinentes, de construire des modèles
+            prédictifs et d’éclairer les décisions.
+          </p>
+
+          <p>
+            De la collecte et la préparation des données à leur analyse,
+            leur visualisation et leur exploitation par des modèles de
+            Machine Learning, je développe des solutions fondées sur
+            les données. Le développement Web Full Stack me permet
+            ensuite de transformer ces solutions en applications
+            accessibles et utiles.
+          </p>
+
+          <div className="about-location">
+            <span className="location-pulse" />
+            {profile.location}
+          </div>
+        </Reveal>
+
+        <div className="value-grid">
+          {items.map((v) => {
+            const Icon = v.icon;
+
+            return (
+              <Reveal key={v.title}>
+                <motion.article
+                  className="value-card"
+                  whileHover={{
+                    y: -5,
+                    borderColor: 'rgba(153,117,255,.42)'
+                  }}
+                >
+                  <span className="value-icon">
+                    <Icon size={19} />
+                  </span>
+
+                  <h3>{v.title}</h3>
+                  <p>{v.desc}</p>
+                </motion.article>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 }
-function Skills(){return <section className="section section-alt" id="skills"><div className="container"><Reveal><SectionHeading eyebrow="02 / COMPÉTENCES" title={<>Des outils pour <span className="gradient-text">construire.</span></>} description="Une boîte à outils en évolution constante, au service de projets concrets."/></Reveal><div className="skills-grid">{skills.map((g,i)=><Reveal key={g.category}><motion.article className="skill-card" whileHover={{y:-5}}><div className="skill-card-head"><span className="skill-number">0{i+1}</span><h3>{g.category}</h3></div><div className="skill-tags">{g.items.map(s=><span key={s} className="skill-tag">{s}</span>)}</div><div className="skill-card-bottom"><span>DOMAINES DE PRATIQUE</span><ArrowDownRight size={16}/></div></motion.article></Reveal>)}</div></div></section>}
+
+
+
+function Skills() {
+  const skillIcons = {
+    "Collecte des données": ClipboardList,
+    "Analyse des données & BI": ChartNoAxesCombined,
+    "Intelligence Artificielle": BrainCircuit,
+    "Data Engineering & Big Data": Database,
+    "Développement Full Stack & API": Code2,
+  };
+
+  return (
+    <section className="section section-alt" id="skills">
+      <div className="container">
+        <Reveal>
+          <SectionHeading
+            eyebrow="02 / COMPÉTENCES"
+            title={
+              <>
+                De la donnée à{" "}
+                <span className="gradient-text">
+                  l'intelligence.
+                </span>
+              </>
+            }
+            description="Des outils pour collecter, analyser et valoriser les données, développer des modèles d'IA et concevoir des applications intelligentes."
+          />
+        </Reveal>
+
+        <div className="skills-grid">
+          {skills.map((g, i) => {
+            const Icon = skillIcons[g.category] || Database;
+
+            return (
+              <Reveal key={g.category}>
+                <motion.article
+                  className="skill-card"
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="skill-card-head">
+                    <span className="value-icon">
+                      <Icon size={21} />
+                    </span>
+
+                    <span className="skill-number">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+
+                  <h3>{g.category}</h3>
+
+                  <div className="skill-tags">
+                    {g.items.map((s) => (
+                      <span key={s} className="skill-tag">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="skill-card-bottom">
+                    <span>OUTILS & TECHNOLOGIES</span>
+                    <ArrowDownRight size={16} />
+                  </div>
+                </motion.article>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 
 function ProjectVisual({ project }) {
   const imageUrl = project.image

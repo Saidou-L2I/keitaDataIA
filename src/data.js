@@ -1,16 +1,88 @@
 // Remplace les exemples et liens fictifs avant publication.
+
 export const profile = {
-  firstName: 'Mamadou Saidou', lastName: 'Keita', role: 'Développeur · Data Analyst',
-  location: 'Dakar, Sénégal', email: 'ton.email@example.com',
-  github: 'https://github.com/TON-PSEUDO', linkedin: 'https://www.linkedin.com/in/TON-PROFIL/',
+  firstName: 'Mamadou Saidou',
+  lastName: 'Keita',
+
+  role: 'Data Scientist · IA · Data Analyst',
+
+  location: 'Dakar, Sénégal',
+  email: 'koinwelle@gmail.com',
+
+  github: 'https://github.com/Saidou-L2I',
+  linkedin: 'https://www.linkedin.com/in/keitadatascience/',
+
   cvPath: `${import.meta.env.BASE_URL}documents/cv.pdf`,
-  intro: 'Je conçois des expériences web et transforme les données en solutions utiles, claires et mesurables.'
+
+  intro:
+    "J'exploite les données et l'intelligence artificielle pour révéler des insights, développer des modèles prédictifs et transformer les données en décisions stratégiques. Je mets également mes compétences en développement Full Stack au service de solutions intelligentes."
 }
+
+
 export const skills = [
- {category:'Frontend',items:['React','JavaScript','HTML5 / CSS3','Tailwind CSS','Framer Motion']},
- {category:'Backend & outils',items:['FastAPI','Python','PostgreSQL','Docker','Git / GitHub']},
- {category:'Data & BI',items:['Power BI','Pandas','NumPy','Scikit-learn','SQL']}
-]
+  {
+    category: "Collecte des données",
+    items: [
+      "Google Forms",
+      "KoboCollect",
+      "Collecte terrain",
+      "Validation des données",
+      "Nettoyage des données",
+    ],
+  },
+  {
+    category: "Analyse des données & BI",
+    items: [
+      "Python (Pandas, NumPy, Matplotlib, Seaborn)",
+      "SQL",
+      "Power BI",
+      "DAX",
+      "Power Query",
+      "EDA & Visualisation",
+    ],
+  },
+    
+{
+  category: "Intelligence Artificielle",
+  items: [
+    "Machine Learning",
+    "Deep Learning",
+    "LLM",
+    "IA générative",
+    "NLP",
+    "MLOps",
+    "Autres"
+  ],
+  },
+
+  {
+    category: "Data Engineering & Big Data",
+    items: [
+      "Talend",
+      "PySpark",
+      "Apache Airflow",
+      "ETL / ELT",
+      "Docker",
+      "Git & GitHub",
+      "Pipelines de données",
+    ],
+  },
+  {
+    category: "Développement Full Stack & API",
+    items: [
+      "Python",
+      "FastAPI",
+      "Flask",
+      "REST API",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Bootstrap",
+    ],
+  },
+];
+
 export const projects = [
  {
   number:'01',title:'Sales Dashboard',

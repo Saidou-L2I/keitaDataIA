@@ -327,3 +327,112 @@
     padding: 20px;
   }
 }*/
+
+/* Conteneur de la photo */
+
+/* Conteneur de la photo */
+.hero-photo-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 25px 10px 45px;
+}
+
+/* Cadre circulaire violet et bleu */
+.photo-frame {
+  position: relative;
+  width: min(100%, 350px);
+  aspect-ratio: 1 / 1;
+  padding: 7px;
+  border: 2px solid #8b5cf6;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  box-shadow:
+    0 0 25px rgba(139, 92, 246, 0.25),
+    0 0 60px rgba(59, 130, 246, 0.12);
+  flex-shrink: 0;
+}
+
+/* Image parfaitement ronde */
+.hero-profile-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  background: #111;
+}
+
+/* Badge supérieur : Développeur */
+.hero-photo-visual .chip-top {
+  position: absolute;
+  top: 16%;
+  right: -5px;
+  z-index: 2;
+}
+
+/* Badge inférieur : Data & IA */
+.hero-photo-visual .chip-bottom {
+  position: absolute;
+  bottom: 24%;
+  left: -10px;
+  z-index: 2;
+}
+
+/* Texte BUILD · LEARN · CREATE */
+.hero-photo-visual .visual-caption {
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+  z-index: 3;
+  color: #a5a0c5;
+  font-size: 10px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* Adaptation aux tablettes et téléphones */
+@media (max-width: 768px) {
+  .hero-photo-visual {
+    width: 100%;
+    margin: 25px auto;
+    padding: 20px 15px 45px;
+  }
+
+  .photo-frame {
+    width: min(78vw, 300px);
+  }
+
+  .hero-photo-visual .chip-top {
+    right: 0;
+  }
+
+  .hero-photo-visual .chip-bottom {
+    left: 0;
+  }
+
+  .hero-photo-visual .visual-caption {
+    right: 50%;
+    bottom: 5px;
+    transform: translateX(50%);
+  }
+}
+
+/* Petits écrans */
+@media (max-width: 380px) {
+  .hero-photo-visual .chip-top {
+    right: -5px;
+  }
+
+  .hero-photo-visual .chip-bottom {
+    left: -5px;
+  }
+
+  .hero-photo-visual .visual-caption {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+}
