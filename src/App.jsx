@@ -435,9 +435,9 @@ function Projects() {
             eyebrow="03 / PROJETS SÉLECTIONNÉS"
             title={
               <>
-                Le travail parle
+                Des projets concrets
                 <br />
-                <span className="muted-title">de lui-même.</span>
+                <span className="muted-title">pour apprendre et innover.</span>
               </>
             }
             description="Quelques projets qui illustrent mon approche et les sujets que j’explore."

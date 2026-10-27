@@ -436,3 +436,23 @@
     letter-spacing: 1.5px;
   }
 }
+/*style de titre pour la section certifications*/
+
+.certification-title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  max-width: 800px;
+}
+
+.certification-title a {
+  font-size: inherit;
+}
+
+@media (max-width: 768px) {
+  .certification-title {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+}
